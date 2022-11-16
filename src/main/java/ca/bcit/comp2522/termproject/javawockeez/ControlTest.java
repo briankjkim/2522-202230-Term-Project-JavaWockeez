@@ -34,9 +34,6 @@ public class ControlTest extends Application {
         viewCharacter = new ImageView(person);
         viewBackground = new ImageView(background);
 
-        Image person = new Image("person3.png", true);
-        imageView = new ImageView(person);
-
         final int personStartCoordinateX = 215;
         final int personStartCoordinateY = 700;
         viewCharacter.setX(personStartCoordinateX);
