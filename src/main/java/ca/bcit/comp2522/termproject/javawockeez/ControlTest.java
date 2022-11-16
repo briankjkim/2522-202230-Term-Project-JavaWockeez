@@ -32,11 +32,7 @@ public class ControlTest extends Application {
      */
     public void start(final Stage primaryStage) {
         Image person = new Image("person3.png", true);
-        Image background = new Image("Board.png", true);
         imageView = new ImageView(person);
-        viewBackground = new ImageView(background);
-//        imageViewTwo = new ImageView(background);
-//        viewBackground = new BackgroundImage(new BackgroundFill(), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
         final int personStartCoordinate = 350;
         imageView.setX(personStartCoordinate);
