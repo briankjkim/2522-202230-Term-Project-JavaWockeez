@@ -6,9 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.scene.layout.*;
 
 
 /**
@@ -19,10 +17,10 @@ public class ControlTest extends Application {
     /**
      * Distance in pixels that the alien moves when a key is pressed.
      */
-    public static final int MOVEMENT_SIZE = 20;
+    public static final int MOVEMENT_SIZE = 15;
 
     // Contains the image of the alien
-    private ImageView imageView;
+    private ImageView viewCharacter;
     private ImageView viewBackground;
 
     /**
@@ -31,22 +29,32 @@ public class ControlTest extends Application {
      * @param primaryStage a Stage
      */
     public void start(final Stage primaryStage) {
-        Image person = new Image("person3.png", true);
-        Image background = new Image("Board.png", true);
-        imageView = new ImageView(person);
+        Image person = new Image("PersonMove2.gif", true);
+        Image background = new Image("backgroundtest.jpeg", true);
+        viewCharacter = new ImageView(person);
         viewBackground = new ImageView(background);
+//        viewBackground = new ImageView(
+//                new Image("Board.png", true),
+//                BackgroundRepeat,
+//                BackgroundRepeat.NO_REPEAT,
+//                BackgroundPosition.CENTER,
+//                BackgroundSize.DEFAULT);
 //        imageViewTwo = new ImageView(background);
 //        viewBackground = new BackgroundImage(new BackgroundFill(), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
-        final int personStartCoordinate = 350;
-        imageView.setX(personStartCoordinate);
-        imageView.setY(personStartCoordinate);
+        final int personStartCoordinateX = 215;
+        final int personStartCoordinateY = 700;
+        viewCharacter.setX(personStartCoordinateX);
+        viewCharacter.setY(personStartCoordinateY);
 
-        Group root = new Group(imageView);
+        Group root = new Group(viewBackground, viewCharacter);
+//        Group rootTwo = new Group(viewBackground);
 
-        final int appWidth = 500;
+        final int appWidth = 533;
         final int appHeight = 800;
+//        root.setId("background");
         Scene scene = new Scene(root, appWidth, appHeight);
+//        scene.getStylesheets().add("/Game.css");
 
         // Register the key listener here
         scene.setOnKeyPressed(this::processKeyPress);
@@ -63,10 +71,10 @@ public class ControlTest extends Application {
      */
     public void processKeyPress(final KeyEvent event) {
         switch (event.getCode()) {
-            case UP -> imageView.setY(imageView.getY() - MOVEMENT_SIZE);
-            case DOWN -> imageView.setY(imageView.getY() + MOVEMENT_SIZE);
-            case RIGHT -> imageView.setX(imageView.getX() + MOVEMENT_SIZE);
-            case LEFT -> imageView.setX(imageView.getX() - MOVEMENT_SIZE);
+            case UP -> viewCharacter.setY(viewCharacter.getY() - MOVEMENT_SIZE);
+            case DOWN -> viewCharacter.setY(viewCharacter.getY() + MOVEMENT_SIZE);
+            case RIGHT -> viewCharacter.setX(viewCharacter.getX() + MOVEMENT_SIZE);
+            case LEFT -> viewCharacter.setX(viewCharacter.getX() - MOVEMENT_SIZE);
             default -> {
             } // Does nothing if it's not an arrow key
         }
