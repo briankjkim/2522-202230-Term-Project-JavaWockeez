@@ -33,14 +33,9 @@ public class ControlTest extends Application {
         Image background = new Image("backgroundtest.jpeg", true);
         viewCharacter = new ImageView(person);
         viewBackground = new ImageView(background);
-//        viewBackground = new ImageView(
-//                new Image("Board.png", true),
-//                BackgroundRepeat,
-//                BackgroundRepeat.NO_REPEAT,
-//                BackgroundPosition.CENTER,
-//                BackgroundSize.DEFAULT);
-//        imageViewTwo = new ImageView(background);
-//        viewBackground = new BackgroundImage(new BackgroundFill(), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+
+        Image person = new Image("person3.png", true);
+        imageView = new ImageView(person);
 
         final int personStartCoordinateX = 215;
         final int personStartCoordinateY = 700;
@@ -48,7 +43,7 @@ public class ControlTest extends Application {
         viewCharacter.setY(personStartCoordinateY);
 
         Group root = new Group(viewBackground, viewCharacter);
-//        Group rootTwo = new Group(viewBackground);
+
 
         final int appWidth = 533;
         final int appHeight = 800;
