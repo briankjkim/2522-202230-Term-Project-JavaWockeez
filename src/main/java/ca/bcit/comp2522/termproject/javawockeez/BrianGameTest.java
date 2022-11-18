@@ -30,7 +30,7 @@ public class BrianGameTest extends Application {
         Image background = new Image("backgroundtest.jpeg", true);
         ImageView viewBackground = new ImageView(background);
 
-        Player currentPlayer = new Player("guy");
+        Player currentPlayer = new Player();
         TileBlock blockOne = new TileBlock(TileBlock.TileType.START, "Test");
 
         Group root = new Group(viewBackground, currentPlayer.viewCharacter, blockOne.imageView);

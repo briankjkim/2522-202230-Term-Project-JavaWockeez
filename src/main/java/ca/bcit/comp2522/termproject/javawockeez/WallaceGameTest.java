@@ -30,7 +30,7 @@ public class WallaceGameTest extends Application {
         viewBackground = new ImageView(background);
         viewPersonTwo = new ImageView(person_two);
 
-        Player player = new Player("guy");
+        Player player = new Player();
         Group root = new Group(viewBackground, player.viewCharacter, viewPersonTwo);
 
         final int appWidth = 500;
