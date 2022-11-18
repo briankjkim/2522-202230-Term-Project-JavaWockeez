@@ -13,15 +13,7 @@ import javafx.stage.Stage;
  */
 public class WallaceGameTest extends Application {
 
-//    /**
-//     * Distance in pixels that the alien moves when a key is pressed.
-//     */
-//    public static final int MOVEMENT_SIZE = 20;
-
-    // Contains the image of the person, background
-
     private Player player;
-//    private ImageView viewCharacter;
     private ImageView viewBackground;
     private ImageView viewPersonTwo;
 
@@ -31,16 +23,13 @@ public class WallaceGameTest extends Application {
      * @param primaryStage a Stage
      */
     public void start(final Stage primaryStage) {
-//        Image person = new Image("PersonMove2.gif", true);
+
         Image person_two = new Image("boomboom2.gif", true);
         Image background = new Image("backgroundtest.jpeg", true);
-//        viewCharacter = new ImageView(person);
+
         viewBackground = new ImageView(background);
         viewPersonTwo = new ImageView(person_two);
 
-//        final int personStartCoordinate = 350;
-//        viewCharacter.setX(personStartCoordinate);
-//        viewCharacter.setY(personStartCoordinate);
         Player player = new Player("guy");
         Group root = new Group(viewBackground, player.viewCharacter, viewPersonTwo);
 
@@ -59,21 +48,6 @@ public class WallaceGameTest extends Application {
     public static void controls(String[] args) {
 
     }
-//    /**
-//     * Modifies the position of the image view when an arrow key is pressed.
-//     *
-//     * @param event invoked this method
-//     */
-//    public void processKeyPress(final KeyEvent event) {
-//        switch (event.getCode()) {
-//            case UP -> viewCharacter.setY(viewCharacter.getY() - MOVEMENT_SIZE);
-//            case DOWN -> viewCharacter.setY(viewCharacter.getY() + MOVEMENT_SIZE);
-//            case RIGHT -> viewCharacter.setX(viewCharacter.getX() + MOVEMENT_SIZE);
-//            case LEFT -> viewCharacter.setX(viewCharacter.getX() - MOVEMENT_SIZE);
-//            default -> {
-//            } // Does nothing if it's not an arrow key
-//        }
-//    }
 
     /**
      * Launches the JavaFX application.

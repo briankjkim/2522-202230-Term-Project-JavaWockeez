@@ -6,15 +6,16 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.Scene;
 
 public class Player {
+
+    /**
+     * The movement size in pixels when the player presses a key.
+     */
     public static final int MOVEMENT_SIZE = 20;
     public String name;
     public ImageView viewCharacter;
 
-//    public Controls controls;
-
     public Player(String name) {
         this.name = name;
-//        this.controls = controls;
         Image person = new Image("PersonMove2.gif", true);
         viewCharacter = new ImageView(person);
 
