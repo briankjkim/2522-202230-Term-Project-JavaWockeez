@@ -14,7 +14,9 @@ import javafx.stage.Stage;
 
 
 /**
- * testing Controls.
+ * Brian Kim's branch for testing application.
+ * @author kkjin0330
+ * @version 2022.11.17
  */
 public class BrianGameTest extends Application {
 
