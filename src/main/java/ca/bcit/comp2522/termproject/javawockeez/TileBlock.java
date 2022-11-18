@@ -11,11 +11,13 @@ public class TileBlock {
     public String name;
     public ImageView imageView;
     public TileType tileType;
+    private Image imageOne = new Image("tileblock.png", true);
+    private Image imageTwo = new Image("blockboom.png", true);
 
     TileBlock(TileType tileType, String tileName) {
         this.tileType = tileType;
         this.name = tileName;
-        Image blockImage = new Image("tileblock.png", true);
+        Image blockImage = imageOne;
 
         final int blockLocationX = 250;
         final int blockLocationY = 250;
@@ -23,5 +25,9 @@ public class TileBlock {
         imageView = new ImageView(blockImage);
         imageView.setX(blockLocationX);
         imageView.setY(blockLocationY);
+    }
+
+    private void changeImage() {
+        imageView = new ImageView(imageTwo);
     }
 }
