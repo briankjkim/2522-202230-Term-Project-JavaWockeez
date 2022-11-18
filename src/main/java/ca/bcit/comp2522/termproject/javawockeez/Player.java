@@ -10,12 +10,14 @@ public class Player {
     /**
      * The movement size in pixels when the player presses a key.
      */
-    public static final int MOVEMENT_SIZE = 20;
+    private static final int MOVEMENT_SIZE = 20;
     public String name;
     public ImageView viewCharacter;
+    private boolean isAlive;
 
-    public Player(String name) {
-        this.name = name;
+    public Player() {
+        this.name = "Guy";
+        this.isAlive = true;
         Image person = new Image("PersonMove2.gif", true);
         viewCharacter = new ImageView(person);
 
