@@ -30,7 +30,7 @@ public class WallaceGameTest extends Application {
         viewBackground = new ImageView(background);
         viewPersonTwo = new ImageView(person_two);
 
-        Player player = new Player("guy");
+        Player player = new Player("guy", 1,1);
         Group root = new Group(viewBackground, player.viewCharacter, viewPersonTwo);
 
         final int appWidth = 500;
@@ -39,6 +39,7 @@ public class WallaceGameTest extends Application {
 
         // Register the key listener here
         scene.setOnKeyPressed(player::processKeyPress);
+        scene.setOnKeyPressed(player::processKeyRelease);
 
         primaryStage.setTitle("Escape Subject 2522");
         primaryStage.setScene(scene);
