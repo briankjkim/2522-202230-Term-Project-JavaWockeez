@@ -11,6 +11,8 @@ public class TileBlock {
     public String name;
     public ImageView imageView;
     public TileType tileType;
+    private int posX;
+    private int posY;
     private Image imageOne = new Image("tileblock.png", true);
     private Image imageTwo = new Image("blockboom.png", true);
 
