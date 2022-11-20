@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 
 /**
- * Brian Kim's branch for testing application.
+ * Sprint 2 Application Test
  * @author kkjin0330
  * @version 2022.11.17
  */
