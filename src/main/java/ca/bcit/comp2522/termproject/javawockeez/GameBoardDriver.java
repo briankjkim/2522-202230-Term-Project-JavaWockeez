@@ -33,7 +33,7 @@ public class GameBoardDriver extends Application {
         gameBoard.setY(150);
         Group root = new Group(viewBackground, gameBoard, blockOne.imageView, currentPlayer.viewCharacter);
 
-        final int appWidth = 500;
+        final int appWidth = 510;
         final int appHeight = 700;
         Scene scene = new Scene(root, appWidth, appHeight);
 
