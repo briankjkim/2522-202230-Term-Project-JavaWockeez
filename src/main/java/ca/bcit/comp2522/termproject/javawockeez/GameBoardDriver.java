@@ -1,16 +1,11 @@
 package ca.bcit.comp2522.termproject.javawockeez;
 
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 
@@ -19,7 +14,7 @@ import javafx.stage.Stage;
  * @author kkjin0330
  * @version 2022.11.17
  */
-public class BrianGameTest extends Application {
+public class GameBoardDriver extends Application {
 
 
     /**
@@ -59,3 +54,4 @@ public class BrianGameTest extends Application {
         launch(args);
     }
 }
+
