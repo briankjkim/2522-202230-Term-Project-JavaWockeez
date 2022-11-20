@@ -23,7 +23,7 @@ public class GameBoardDriver extends Application {
      * @param primaryStage a Stage
      */
     public void start(final Stage primaryStage) {
-        Image background = new Image("backgroundtest.jpeg", true);
+        Image background = new Image("BoardTemplate.png", true);
         ImageView viewBackground = new ImageView(background);
 
         Player currentPlayer = new Player();
@@ -34,7 +34,7 @@ public class GameBoardDriver extends Application {
         Group root = new Group(viewBackground, gameBoard, blockOne.imageView, currentPlayer.viewCharacter);
 
         final int appWidth = 500;
-        final int appHeight = 750;
+        final int appHeight = 700;
         Scene scene = new Scene(root, appWidth, appHeight);
 
         // Register the key listener here
