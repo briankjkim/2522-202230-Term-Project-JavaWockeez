@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -32,8 +33,10 @@ public class BrianGameTest extends Application {
 
         Player currentPlayer = new Player();
         TileBlock blockOne = new TileBlock(TileBlock.TileType.START, "Test");
-
-        Group root = new Group(viewBackground, currentPlayer.viewCharacter, blockOne.imageView);
+        Board gameBoard = new Board(Color.GREY);
+        gameBoard.setX(150);
+        gameBoard.setY(150);
+        Group root = new Group(viewBackground, gameBoard, blockOne.imageView, currentPlayer.viewCharacter);
 
         final int appWidth = 500;
         final int appHeight = 750;
