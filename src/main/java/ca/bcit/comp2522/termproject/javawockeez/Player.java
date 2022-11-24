@@ -4,13 +4,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.Scene;
+import javafx.scene.shape.Rectangle;
 
 public class Player {
 
     /**
      * The movement size in pixels when the player presses a key.
      */
-    private static final int MOVEMENT_SIZE = 20;
+    private static final int MOVEMENT_SIZE = 10;
     public String name;
     public ImageView viewCharacter;
     private boolean isAlive;
@@ -25,20 +26,19 @@ public class Player {
         viewCharacter.setX(personStartCoordinate);
         viewCharacter.setY(personStartCoordinate);
     }
-//    /**
-//     * Modifies the position of the image view when an arrow key is pressed.
-//     *
-//     * @param event invoked this method
-//     */
-    public void processKeyPress(final KeyEvent event) {
-        switch (event.getCode()) {
-            case UP -> viewCharacter.setY(viewCharacter.getY() - MOVEMENT_SIZE);
-            case DOWN -> viewCharacter.setY(viewCharacter.getY() + MOVEMENT_SIZE);
-            case RIGHT -> viewCharacter.setX(viewCharacter.getX() + MOVEMENT_SIZE);
-            case LEFT -> viewCharacter.setX(viewCharacter.getX() - MOVEMENT_SIZE);
-            default -> {
-            } // Does nothing if it's not an arrow key
-        }
+
+    public void moveUP() {
+        this.viewCharacter.setLayoutY(this.viewCharacter.getLayoutY() - MOVEMENT_SIZE);
     }
+    public void moveDOWN() {
+        this.viewCharacter.setLayoutY(this.viewCharacter.getLayoutY() + MOVEMENT_SIZE);
+    }
+    public void moveLEFT() {
+        this.viewCharacter.setLayoutX(this.viewCharacter.getLayoutX() - MOVEMENT_SIZE);
+    }
+    public void moveRIGHT() {
+        this.viewCharacter.setLayoutX(this.viewCharacter.getLayoutX() + MOVEMENT_SIZE);
+    }
+
 
 }

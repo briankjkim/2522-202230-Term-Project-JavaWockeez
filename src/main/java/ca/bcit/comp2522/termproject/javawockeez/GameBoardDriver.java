@@ -38,7 +38,6 @@ public class GameBoardDriver extends Application {
         Scene scene = new Scene(root, appWidth, appHeight);
 
         // Register the key listener here
-        scene.setOnKeyPressed(currentPlayer::processKeyPress);
 
         primaryStage.setTitle("Escape Subject 2522");
         primaryStage.setScene(scene);
