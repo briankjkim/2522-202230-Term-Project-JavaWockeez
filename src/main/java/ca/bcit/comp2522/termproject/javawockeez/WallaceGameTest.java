@@ -19,6 +19,10 @@ public class WallaceGameTest extends Application {
     private ImageView viewBackground;
     private ImageView viewPersonTwo;
 
+    public WallaceGameTest(Player player) {
+        this.player = player;
+    }
+
     /**
      * Displays an image that can be moved using the arrow keys.
      *
@@ -36,8 +40,8 @@ public class WallaceGameTest extends Application {
         final int explosionStartCoordinateY = 261;
         viewPersonTwo.setX(explosionStartCoordinateX);
         viewPersonTwo.setY(explosionStartCoordinateY);
-        Player player = new Player("guy");
-        Group root = new Group(viewBackground, player.viewCharacter, viewPersonTwo);
+        Player player = new Player("subject2522");
+        Group root = new Group(viewBackground, Player.viewCharacter, viewPersonTwo);
 
         Scene scene = new Scene(root, appWidth, appHeight);
 
