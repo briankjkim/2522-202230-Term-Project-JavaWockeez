@@ -16,6 +16,10 @@ import javafx.stage.Stage;
  */
 public class GameBoardDriver extends Application {
 
+    private static final double APP_WIDTH = 510;
+    private static final double APP_HEIGHT = 700;
+    private Player currentPlayer;
+    boolean goNorth, goSouth, goEast, goWest;
 
     /**
      * Displays an image that can be moved using the arrow keys.
@@ -26,7 +30,7 @@ public class GameBoardDriver extends Application {
         Image background = new Image("backgroundtest.jpeg", true);
         ImageView viewBackground = new ImageView(background);
 
-        Player currentPlayer = new Player();
+        currentPlayer = new Player();
         TileBlock blockOne = new TileBlock(TileBlock.TileType.START, "Test");
         Board gameBoard = new Board(Color.GREY);
         gameBoard.setX(150);
@@ -43,6 +47,30 @@ public class GameBoardDriver extends Application {
         primaryStage.setTitle("Escape Subject 2522");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private void moveGuyBy(int dx, int dy) {
+        if (dx == 0 && dy == 0) return;
+
+        final double cx = currentPlayer.getBoundsInLocal().getWidth()  / 2;
+        final double cy = currentPlayer.getBoundsInLocal().getHeight() / 2;
+
+        double x = cx + currentPlayer.getLayoutX() + dx;
+        double y = cy + currentPlayer.getLayoutY() + dy;
+
+        moveGuyTo(x, y);
+    }
+
+    private void moveGuyTo(double x, double y) {
+        final double cx = currentPlayer.getBoundsInLocal().getWidth()  / 2;
+        final double cy = currentPlayer.getBoundsInLocal().getHeight() / 2;
+
+        if (x - cx >= 0 &&
+                x + cx <= APP_WIDTH &&
+                y - cy >= 0 &&
+                y + cy <= APP_HEIGHT) {
+            currentPlayer.relocate(x - cx, y - cy);
+        }
     }
 
     /**

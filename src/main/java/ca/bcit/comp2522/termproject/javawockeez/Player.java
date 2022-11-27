@@ -1,11 +1,12 @@
 package ca.bcit.comp2522.termproject.javawockeez;
 
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.Scene;
 
-public class Player {
+public class Player extends Node {
 
     /**
      * The movement size in pixels when the player presses a key.
