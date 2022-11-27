@@ -65,6 +65,7 @@ public class Player {
     public ImageView getViewCharacter() {
         return viewCharacter;
     }
+
     /**
      * The character's X coordinate boundary to restrict the character from leaving the application's width.
      * @param movement represented as a double.
@@ -83,6 +84,7 @@ public class Player {
             viewCharacter.setY(movement);
         }
     }
+
     /**
      * Modifies the position of the image view when an arrow key is pressed.
      * @param event invoked this method

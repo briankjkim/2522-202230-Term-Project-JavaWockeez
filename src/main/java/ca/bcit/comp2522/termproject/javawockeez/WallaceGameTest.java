@@ -19,10 +19,6 @@ public class WallaceGameTest extends Application {
     private ImageView viewBackground;
     private ImageView viewPersonTwo;
 
-    public WallaceGameTest(Player player) {
-        this.player = player;
-    }
-
     /**
      * Displays an image that can be moved using the arrow keys.
      *
