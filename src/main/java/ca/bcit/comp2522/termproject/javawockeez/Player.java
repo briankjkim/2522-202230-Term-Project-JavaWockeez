@@ -71,7 +71,7 @@ public class Player {
      * @param movement represented as a double.
      */
     public static void characterXCoordinate(final double movement){
-        if (movement < appWidth - 30 && movement > 0) {
+        if (movement < appWidth - 30 && movement > -30) {
             viewCharacter.setX(movement);
         }
     }
@@ -80,7 +80,7 @@ public class Player {
      * @param movement represented as a double.
      */
     public static void characterYCoordinate(final double movement){
-        if (movement < appHeight - 30 && movement > 0) {
+        if (movement < appHeight - 30 && movement > -20) {
             viewCharacter.setY(movement);
         }
     }
