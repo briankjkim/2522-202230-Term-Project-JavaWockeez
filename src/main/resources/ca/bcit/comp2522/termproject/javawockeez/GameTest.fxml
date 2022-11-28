@@ -9,24 +9,24 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.bcit.comp2522.termproject.javawockeez.GameTestController">
    <children>
-      <Canvas fx:id="canvas" height="600.0" width="400.0" />
+      <Canvas fx:id="canvas" height="600.0" layoutY="-1.0" width="400.0" />
       <ImageView fx:id="gameBoard" fitHeight="549.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../BoardTemplate.png" />
          </image>
       </ImageView>
       <Rectangle fx:id="tileBlock32" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutY="427.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-      <Group layoutY="337.0">
+      <Group layoutY="382.0">
          <children>
             <Rectangle fx:id="tileBlock321" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="45.0" layoutY="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-            <Rectangle fx:id="tileBlock322" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
             <Rectangle fx:id="tileBlock3211" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="90.0" layoutY="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-            <Rectangle fx:id="tileBlock32211" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="90.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+            <Rectangle fx:id="tileBlock322" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
             <Rectangle fx:id="tileBlock3221" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+            <Rectangle fx:id="tileBlock32211" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="90.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
          </children>
       </Group>
       <Rectangle fx:id="boomBlock" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" layoutX="177.0" layoutY="252.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-      <ImageView fx:id="guy" fitHeight="99.0" fitWidth="86.0" layoutX="157.0" layoutY="364.0" onKeyPressed="#processKeyPress" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="guy" fitHeight="48.0" fitWidth="45.0" layoutX="81.0" layoutY="494.0" onKeyPressed="#processKeyPress" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../PersonMove2.gif" />
          </image>
