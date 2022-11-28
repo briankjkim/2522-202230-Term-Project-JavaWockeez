@@ -5,17 +5,19 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
 /**
- * Brian Kim's branch for testing application.
- * @author kkjin0330
- * @version 2022.11.17
+ * testing Controls.
  */
-public class GameBoardDriver extends Application {
+public class WallaceGameTest extends Application {
 
+    public static final int appWidth = 510;
+    public static final int appHeight = 700;
+    private Player player;
+    private ImageView viewBackground;
+    private ImageView viewPersonTwo;
 
     /**
      * Displays an image that can be moved using the arrow keys.
@@ -23,22 +25,25 @@ public class GameBoardDriver extends Application {
      * @param primaryStage a Stage
      */
     public void start(final Stage primaryStage) {
-        Image background = new Image("backgroundtest.jpeg", true);
-        ImageView viewBackground = new ImageView(background);
 
-        Player currentPlayer = new Player();
-        TileBlock blockOne = new TileBlock(TileBlock.TileType.START, "Test");
-        Board gameBoard = new Board(Color.GREY);
-        gameBoard.setX(150);
-        gameBoard.setY(150);
-        Group root = new Group(viewBackground, gameBoard, blockOne.imageView, currentPlayer.viewCharacter);
+        Image person_two = new Image("ExplosionSpriteFPS7.gif", true);
+        Image background = new Image("BoardTemplate.png", true);
 
-        final int appWidth = 500;
-        final int appHeight = 750;
+        viewBackground = new ImageView(background);
+        viewPersonTwo = new ImageView(person_two);
+
+        final int explosionStartCoordinateX = 170;
+        final int explosionStartCoordinateY = 261;
+        viewPersonTwo.setX(explosionStartCoordinateX);
+        viewPersonTwo.setY(explosionStartCoordinateY);
+        Player player = new Player("subject2522");
+        Group root = new Group(viewBackground, Player.viewCharacter, viewPersonTwo);
+
         Scene scene = new Scene(root, appWidth, appHeight);
 
         // Register the key listener here
-        scene.setOnKeyPressed(currentPlayer::processKeyPress);
+        scene.setOnKeyPressed(player::processKeyPress);
+//        scene.setOnKeyPressed(player::processKeyRelease);
 
         primaryStage.setTitle("Escape Subject 2522");
         primaryStage.setScene(scene);
@@ -54,4 +59,3 @@ public class GameBoardDriver extends Application {
         launch(args);
     }
 }
-
