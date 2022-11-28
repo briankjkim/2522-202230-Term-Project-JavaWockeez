@@ -1,10 +1,13 @@
 package ca.bcit.comp2522.termproject.javawockeez;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -19,7 +22,8 @@ public class GameBoardDriver extends Application {
     private static final double APP_WIDTH = 510;
     private static final double APP_HEIGHT = 700;
     private Player currentPlayer;
-    boolean goNorth, goSouth, goEast, goWest;
+    private ImageView explosion;
+    private ImageView backgroundBoard;
 
     /**
      * Displays an image that can be moved using the arrow keys.
@@ -27,51 +31,63 @@ public class GameBoardDriver extends Application {
      * @param primaryStage a Stage
      */
     public void start(final Stage primaryStage) {
-        Image background = new Image("backgroundtest.jpeg", true);
-        ImageView viewBackground = new ImageView(background);
+        Image explosionImg = new Image("ExplosionSpriteFPS7.gif", true);
+        Image backgroundImg = new Image("BoardTemplate.png", true);
 
+        explosion = new ImageView(explosionImg);
+        backgroundBoard = new ImageView(backgroundImg);
         currentPlayer = new Player();
+
         TileBlock blockOne = new TileBlock(TileBlock.TileType.START, "Test");
-        Board gameBoard = new Board(Color.GREY);
-        gameBoard.setX(150);
-        gameBoard.setY(150);
-        Group root = new Group(viewBackground, gameBoard, blockOne.imageView, currentPlayer.viewCharacter);
 
-        final int appWidth = 500;
-        final int appHeight = 750;
-        Scene scene = new Scene(root, appWidth, appHeight);
+        final int explosionStartCoordinateX = 170;
+        final int explosionStartCoordinateY = 261;
+        explosion.setX(explosionStartCoordinateX);
+        explosion.setY(explosionStartCoordinateY);
 
-        // Register the key listener here
-        scene.setOnKeyPressed(currentPlayer::processKeyPress);
+        Group root = new Group(backgroundBoard, blockOne, currentPlayer.viewCharacter, explosion);
+
+        Scene scene = new Scene(root, APP_WIDTH, APP_HEIGHT);
+
+        scene.setOnKeyPressed(event -> {
+            switch (event.getCode()) {
+                case UP -> currentPlayer.goNorth = true;
+                case DOWN -> currentPlayer.goSouth = true;
+                case LEFT -> currentPlayer.goWest = true;
+                case RIGHT -> currentPlayer.goEast = true;
+            }
+        });
+
+        scene.setOnKeyReleased(event -> {
+            switch (event.getCode()) {
+                case UP -> currentPlayer.goNorth = false;
+                case DOWN -> currentPlayer.goSouth = false;
+                case LEFT -> currentPlayer.goWest = false;
+                case RIGHT -> currentPlayer.goEast = false;
+            }
+        });
 
         primaryStage.setTitle("Escape Subject 2522");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        AnimationTimer timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+
+                if (currentPlayer.goNorth) currentPlayer.dy -= 1;
+                if (currentPlayer.goSouth) currentPlayer.dy += 1;
+                if (currentPlayer.goEast)  currentPlayer.dx += 1;
+                if (currentPlayer.goWest)  currentPlayer.dx -= 1;
+
+                currentPlayer.moveGuyBy(currentPlayer.dx, currentPlayer.dy);
+            }
+        };
+        timer.start();
     }
 
-    private void moveGuyBy(int dx, int dy) {
-        if (dx == 0 && dy == 0) return;
 
-        final double cx = currentPlayer.getBoundsInLocal().getWidth()  / 2;
-        final double cy = currentPlayer.getBoundsInLocal().getHeight() / 2;
 
-        double x = cx + currentPlayer.getLayoutX() + dx;
-        double y = cy + currentPlayer.getLayoutY() + dy;
-
-        moveGuyTo(x, y);
-    }
-
-    private void moveGuyTo(double x, double y) {
-        final double cx = currentPlayer.getBoundsInLocal().getWidth()  / 2;
-        final double cy = currentPlayer.getBoundsInLocal().getHeight() / 2;
-
-        if (x - cx >= 0 &&
-                x + cx <= APP_WIDTH &&
-                y - cy >= 0 &&
-                y + cy <= APP_HEIGHT) {
-            currentPlayer.relocate(x - cx, y - cy);
-        }
-    }
 
     /**
      * Launches the JavaFX application.

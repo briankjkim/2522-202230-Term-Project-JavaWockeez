@@ -7,14 +7,15 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.Scene;
 
 public class Player extends Node {
-
-    /**
-     * The movement size in pixels when the player presses a key.
-     */
-    private static final int MOVEMENT_SIZE = 20;
+    private static final double APP_WIDTH = 510;
+    private static final double APP_HEIGHT = 700;
+    public double dy;
+    public double dx;
     public String name;
     public ImageView viewCharacter;
     private boolean isAlive;
+    boolean goNorth, goSouth, goEast, goWest;
+
 
     public Player() {
         this.name = "Guy";
@@ -26,20 +27,30 @@ public class Player extends Node {
         viewCharacter.setX(personStartCoordinate);
         viewCharacter.setY(personStartCoordinate);
     }
-//    /**
-//     * Modifies the position of the image view when an arrow key is pressed.
-//     *
-//     * @param event invoked this method
-//     */
-    public void processKeyPress(final KeyEvent event) {
-        switch (event.getCode()) {
-            case UP -> viewCharacter.setY(viewCharacter.getY() - MOVEMENT_SIZE);
-            case DOWN -> viewCharacter.setY(viewCharacter.getY() + MOVEMENT_SIZE);
-            case RIGHT -> viewCharacter.setX(viewCharacter.getX() + MOVEMENT_SIZE);
-            case LEFT -> viewCharacter.setX(viewCharacter.getX() - MOVEMENT_SIZE);
-            default -> {
-            } // Does nothing if it's not an arrow key
+
+    private void moveGuyTo(double x, double y) {
+        final double cx = this.getBoundsInLocal().getWidth()  / 2;
+        final double cy = this.getBoundsInLocal().getHeight() / 2;
+
+        if (x - cx >= 0 &&
+                x + cx <= APP_WIDTH &&
+                y - cy >= 0 &&
+                y + cy <= APP_HEIGHT) {
+            this.relocate(x - cx, y - cy);
         }
     }
+
+    void moveGuyBy(double dx, double dy) {
+        if (dx == 0 && dy == 0) return;
+
+        final double cx = this.getBoundsInLocal().getWidth()  / 2;
+        final double cy = this.getBoundsInLocal().getHeight() / 2;
+
+        double x = cx + this.getLayoutX() + dx;
+        double y = cy + this.getLayoutY() + dy;
+
+        moveGuyTo(x, y);
+    }
+
 
 }

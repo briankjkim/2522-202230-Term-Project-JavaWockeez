@@ -2,8 +2,9 @@ package ca.bcit.comp2522.termproject.javawockeez;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 
-public class TileBlock {
+public class TileBlock extends Rectangle {
 
     public enum TileType {
         START, GOAL, OBSTACLE, EXPLOSIVE
