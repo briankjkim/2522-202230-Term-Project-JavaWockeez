@@ -32,10 +32,10 @@ public class WallaceGameTest extends Application {
     public void inGameMusic() {
         String path = "src/main/resources/InGameMusic.wav";
         Media media = new Media(Paths.get(path).toUri().toString());
-        AudioClip mediaPlayer = new AudioClip(media.getSource());
-        mediaPlayer.setCycleCount(AudioClip.INDEFINITE);
-        mediaPlayer.setVolume(0.25);
-        mediaPlayer.play();
+        AudioClip audioPlayer = new AudioClip(media.getSource());
+        audioPlayer.setCycleCount(AudioClip.INDEFINITE);
+        audioPlayer.setVolume(0.25);
+        audioPlayer.play();
     }
     /**
      * Displays an image that can be moved using the arrow keys.
