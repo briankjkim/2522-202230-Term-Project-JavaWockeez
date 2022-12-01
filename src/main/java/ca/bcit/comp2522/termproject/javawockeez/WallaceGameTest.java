@@ -1,11 +1,14 @@
 package ca.bcit.comp2522.termproject.javawockeez;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 
 /**
@@ -36,6 +39,14 @@ public class WallaceGameTest extends Application {
         final int explosionStartCoordinateY = 261;
         viewPersonTwo.setX(explosionStartCoordinateX);
         viewPersonTwo.setY(explosionStartCoordinateY);
+
+        FadeTransition ft = new FadeTransition(Duration.millis(2000), viewPersonTwo);
+        ft.setFromValue(1.0);
+        ft.setToValue(0.0);
+        ft.setCycleCount(Timeline.INDEFINITE);
+        ft.setAutoReverse(true);
+        ft.play();
+
         Player player = new Player("subject2522");
         Group root = new Group(viewBackground, Player.viewCharacter, viewPersonTwo);
 
