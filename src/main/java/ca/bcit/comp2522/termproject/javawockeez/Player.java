@@ -32,7 +32,7 @@ public class Player {
      * The character model image to be controlled by the user.
      */
     public static ImageView viewCharacter;
-
+    private static int LIFECOUNTER = 3;
     private Player player;
 //    private static Player singletonPlayer;
 
@@ -65,7 +65,6 @@ public class Player {
     public ImageView getViewCharacter() {
         return viewCharacter;
     }
-
     /**
      * The character's X coordinate boundary to restrict the character from leaving the application's width.
      * @param movement represented as a double.
@@ -80,11 +79,10 @@ public class Player {
      * @param movement represented as a double.
      */
     public static void characterYCoordinate(final double movement){
-        if (movement < appHeight - 30 && movement > -20) {
+        if (movement < appHeight - 50 && movement > -20) {
             viewCharacter.setY(movement);
         }
     }
-
     /**
      * Modifies the position of the image view when an arrow key is pressed.
      * @param event invoked this method
@@ -99,4 +97,7 @@ public class Player {
             } // Does nothing if it's not an arrow key
         }
     }
+
+
+
 }

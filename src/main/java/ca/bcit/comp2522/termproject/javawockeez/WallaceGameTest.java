@@ -5,7 +5,12 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+
+import java.nio.file.Paths;
 
 
 /**
@@ -15,29 +20,42 @@ public class WallaceGameTest extends Application {
 
     public static final int appWidth = 510;
     public static final int appHeight = 700;
+
     private Player player;
     private ImageView viewBackground;
-    private ImageView viewPersonTwo;
+    private ImageView explosion;
 
+    MediaPlayer mediaPlayer;
+    /**
+     * Music Player
+     */
+    public void inGameMusic() {
+        String path = "src/main/resources/InGameMusic.wav";
+        Media media = new Media(Paths.get(path).toUri().toString());
+        AudioClip mediaPlayer = new AudioClip(media.getSource());
+        mediaPlayer.setCycleCount(AudioClip.INDEFINITE);
+        mediaPlayer.setVolume(0.25);
+        mediaPlayer.play();
+    }
     /**
      * Displays an image that can be moved using the arrow keys.
      *
      * @param primaryStage a Stage
      */
     public void start(final Stage primaryStage) {
-
-        Image person_two = new Image("ExplosionSpriteFPS7.gif", true);
+        inGameMusic();
+        Image explosion = new Image("ExplosionSpriteFPS7.gif", true);
         Image background = new Image("BoardTemplate.png", true);
 
         viewBackground = new ImageView(background);
-        viewPersonTwo = new ImageView(person_two);
+        this.explosion = new ImageView(explosion);
 
         final int explosionStartCoordinateX = 170;
         final int explosionStartCoordinateY = 261;
-        viewPersonTwo.setX(explosionStartCoordinateX);
-        viewPersonTwo.setY(explosionStartCoordinateY);
+        this.explosion.setX(explosionStartCoordinateX);
+        this.explosion.setY(explosionStartCoordinateY);
         Player player = new Player("subject2522");
-        Group root = new Group(viewBackground, Player.viewCharacter, viewPersonTwo);
+        Group root = new Group(viewBackground, Player.viewCharacter, this.explosion);
 
         Scene scene = new Scene(root, appWidth, appHeight);
 
@@ -49,7 +67,6 @@ public class WallaceGameTest extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
     /**
      * Launches the JavaFX application.
      *
