@@ -7,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.nio.file.Paths;
@@ -25,7 +24,6 @@ public class WallaceGameTest extends Application {
     private ImageView viewBackground;
     private ImageView explosion;
 
-    MediaPlayer mediaPlayer;
     /**
      * Music Player
      */
