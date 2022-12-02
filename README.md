@@ -54,5 +54,5 @@ Technologies used for this project:
     - In-Game Music - https://freesound.org/people/Xythe/sounds/516912/
 ---
 ## Contributors
-* Brian KJ Kim ()
+* Brian KJ Kim (kkim266@my.bcit.ca)
 * Wallace Trinh (wtrinh1@my.bcit.ca)
