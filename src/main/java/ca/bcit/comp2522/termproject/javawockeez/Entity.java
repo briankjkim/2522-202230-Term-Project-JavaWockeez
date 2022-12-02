@@ -14,7 +14,7 @@ public abstract class Entity extends Group {
     protected boolean isVisible = false;
 
     public Entity() {
-
+        this("PersonMove2.gif");
     }
 
     public Entity(final String entityImage) {
