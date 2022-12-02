@@ -10,7 +10,7 @@
 * [Project Description](#our-project)
 * [How to play](#how-to-play)
 * [Technologies](#technologies)
-* [Future Features](#future Features)
+* [Future Features](#future-features)
 * [References](#references)
 * [Contributors](#contributors)
 ---
