@@ -80,7 +80,7 @@ public class Player {
      * @param movement represented as a double.
      */
     public static void characterYCoordinate(final double movement){
-        if (movement < appHeight - 30 && movement > -20) {
+        if (movement < appHeight - 50 && movement > -20) {
             viewCharacter.setY(movement);
         }
     }
