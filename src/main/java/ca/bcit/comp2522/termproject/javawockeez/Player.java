@@ -4,8 +4,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 
-import static ca.bcit.comp2522.termproject.javawockeez.WallaceGameTest.appHeight;
-import static ca.bcit.comp2522.termproject.javawockeez.WallaceGameTest.appWidth;
+import static ca.bcit.comp2522.termproject.javawockeez.GameDriver.appHeight;
+import static ca.bcit.comp2522.termproject.javawockeez.GameDriver.appWidth;
 
 public class Player {
     /**
@@ -32,10 +32,7 @@ public class Player {
      * The character model image to be controlled by the user.
      */
     public static ImageView viewCharacter;
-
     private Player player;
-//    private static Player singletonPlayer;
-
     /**
      * The constructor of the Player class.
      * @param name represented as a string.
@@ -43,7 +40,6 @@ public class Player {
     public Player(String name) {
         this.name = name;
         viewCharacter = new ImageView (new Image("PersonMove2.gif", true));
-//        viewCharacter = new ImageView(person);
         viewCharacter.setX(STARTING_X); // Starting X coordinate of the character.
         viewCharacter.setY(STARTING_Y); // Starting Y coordinate of the character.
 //        viewCharacter.setFitHeight(30); // Adjust the height of the character size.
@@ -51,13 +47,6 @@ public class Player {
         viewCharacter.setSmooth(true);
         viewCharacter.setPreserveRatio(true);
     }
-//    public static Player getInstance() {
-//        if (singletonPlayer == null) {
-//            singletonPlayer = new Player(IMAGE_CHARACTER);
-//        }
-//        return singletonPlayer;
-//    }
-
     /**
      * The access modifier for the viewCharacter.
      * @return viewCharacter.
@@ -84,7 +73,6 @@ public class Player {
             viewCharacter.setY(movement);
         }
     }
-
     /**
      * Modifies the position of the image view when an arrow key is pressed.
      * @param event invoked this method

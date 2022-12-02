@@ -47,11 +47,18 @@ Technologies used for this project:
 - Photos:
     - n/a
 
+- Sound Content
+  - Main Menu Music https://freesound.org/people/josefpres/sounds/653793/
+  - In-Game Music - https://freesound.org/people/Xythe/sounds/516912/
+  - Explosion - https://freesound.org/people/timgormly/sounds/170144/
+  - On-Death - https://freesound.org/people/AtoMediaDesign/sounds/648983/
+  - Level-Up - https://freesound.org/people/danlucaz/sounds/517765/
+  - Victory - https://freesound.org/people/Timbre/sounds/105981/
+  - GameOver - https://freesound.org/people/TheZero/sounds/368367/
+
 - Tutorials followed in the making of this project:
     - 
 
-- Sound Content
-    - In-Game Music - https://freesound.org/people/Xythe/sounds/516912/
 ---
 ## Contributors
 * Brian KJ Kim (kkim266@my.bcit.ca)
