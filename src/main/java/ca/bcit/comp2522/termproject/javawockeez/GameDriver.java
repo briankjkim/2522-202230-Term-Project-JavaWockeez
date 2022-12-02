@@ -13,7 +13,9 @@ import java.nio.file.Paths;
 
 
 /**
- * testing Controls.
+ * Main Game Driver
+ * @author Brian KJ Kim, Wallace Trinh
+ * @version Dec 2022
  */
 public class GameDriver extends Application {
 
@@ -22,6 +24,8 @@ public class GameDriver extends Application {
     private Player player;
     private ImageView viewBackground;
     private ImageView viewPersonTwo;
+
+
     /**
      * Audio Player for when the Game loads in.
      */

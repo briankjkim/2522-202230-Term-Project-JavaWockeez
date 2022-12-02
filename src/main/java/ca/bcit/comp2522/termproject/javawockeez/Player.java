@@ -7,6 +7,11 @@ import javafx.scene.input.KeyEvent;
 import static ca.bcit.comp2522.termproject.javawockeez.GameDriver.appHeight;
 import static ca.bcit.comp2522.termproject.javawockeez.GameDriver.appWidth;
 
+/**
+ * Player class for player movement.
+ * @author Brian KJ Kim, Wallace Trinh
+ * @version Dec 2022
+ */
 public class Player {
     /**
      * Starting X coordinate of the character.

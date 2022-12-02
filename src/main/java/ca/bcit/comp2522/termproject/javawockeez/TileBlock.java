@@ -2,7 +2,11 @@ package ca.bcit.comp2522.termproject.javawockeez;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
+/**
+ * TileBlock
+ * @author Brian KJ Kim, Wallace Trinh
+ * @version Dec 2022
+ */
 public class TileBlock {
 
     public enum TileType {
