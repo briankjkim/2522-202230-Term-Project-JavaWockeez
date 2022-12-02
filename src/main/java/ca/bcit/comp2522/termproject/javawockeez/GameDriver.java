@@ -58,7 +58,7 @@ public class GameDriver extends Application {
         // Register the key listener here
         scene.setOnKeyPressed(player::processKeyPress);
 //        scene.setOnKeyPressed(player::processKeyRelease);
-
+        primaryStage.setResizable(false);
         primaryStage.setTitle("Escape Subject 2522");
         primaryStage.setScene(scene);
         primaryStage.show();

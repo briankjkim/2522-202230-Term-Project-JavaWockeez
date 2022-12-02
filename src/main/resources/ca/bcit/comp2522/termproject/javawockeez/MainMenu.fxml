@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.bcit.comp2522.termproject.javawockeez.MainMenu">
    <children>
       <ImageView accessibleRole="TITLED_PANE" blendMode="SRC_ATOP" fitHeight="748.0" fitWidth="510.0">
          <image>
