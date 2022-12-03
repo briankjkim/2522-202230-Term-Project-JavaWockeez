@@ -57,6 +57,14 @@ public class GameDriver extends Application {
         Player player = new Player("subject2522");
         Group root = new Group(viewBackground, Player.viewCharacter, viewPersonTwo);
 
+        Boom boom2 = new Boom(100, 200) {
+        };
+
+        Boom boom3 = new Boom(400, 500) {
+        };
+
+        root.getChildren().addAll(boom2, boom3);
+
         Scene scene = new Scene(root, appWidth, appHeight);
 
         // Register the key listener here
