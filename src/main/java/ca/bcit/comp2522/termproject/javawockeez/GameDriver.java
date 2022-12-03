@@ -1,7 +1,7 @@
 package ca.bcit.comp2522.termproject.javawockeez;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -29,16 +29,25 @@ public class GameDriver extends Application {
     /**
      * Audio Player for when the Game loads in.
      */
+    public void inMenuMusic() {
+        String path = "src/main/resources/Audio/MainMenu.wav";
+        Media media = new Media(Paths.get(path).toUri().toString());
+        AudioClip audioPlayer = new AudioClip(media.getSource());
+//        audioPlayer.setCycleCount(AudioClip.INDEFINITE);
+        audioPlayer.setVolume(0.2);
+        audioPlayer.play();
+    }
+    /**
+     * Audio Player for when the Game loads in.
+     */
     public void inGameMusic() {
         String path = "src/main/resources/Audio/InGameMusic.wav";
         Media media = new Media(Paths.get(path).toUri().toString());
         AudioClip audioPlayer = new AudioClip(media.getSource());
         audioPlayer.setCycleCount(AudioClip.INDEFINITE);
-        audioPlayer.setVolume(0.25);
+        audioPlayer.setVolume(0.35);
         audioPlayer.play();
     }
-
-
     /**
      * Launches the JavaFX application.
      *
@@ -58,19 +67,20 @@ public class GameDriver extends Application {
     }
 
     public Scene mainMenu(Stage stage){// Creating a button in the first scene to be placed at the center
+        inMenuMusic();
         Button startButton = new Button();
-        startButton.setPrefWidth(100);
-        startButton.setPrefHeight(20);
+        startButton.setPrefWidth(150);
+        startButton.setPrefHeight(15);
 
         startButton.setText("Start");
 
         HBox hbox1 = new HBox(startButton);
-        hbox1.setSpacing(10);
-
-        hbox1.setAlignment(Pos.CENTER);
+        hbox1.setSpacing(5);
+        hbox1.setPadding(new Insets(470,250,200,85));
 
         BorderPane mainMenuPane = new BorderPane();// It is used in order to set it at the center
         mainMenuPane.setCenter(hbox1);
+        mainMenuPane.getStylesheets().add("stylesheet.css");
 
         startButton.setOnAction(actionEvent -> {
             stage.close();
@@ -87,9 +97,10 @@ public class GameDriver extends Application {
     /**
      * Displays an image that can be moved using the arrow keys.
      *
-     * @param primaryStage a Stage
+     * @param stage a Stage
      */
     public Scene inGame(final Stage stage) throws Exception {
+
         inGameMusic();
         Image person_two = new Image("ExplosionSpriteFPS7.gif", true);
         Image background = new Image("BoardTemplate.png", true);

@@ -1,0 +1,22 @@
+
+.root {
+    -fx-background-image: url("MainMenu2.gif");
+}
+
+.button {
+    -fx-font-family: Tahoma;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-text-fill: black;
+    -fx-background-color: #f7b248;
+    -fx-background-radius: 30;
+    /*-fx-padding: 7px;*/
+}
+.button:hover {
+    -fx-background-color: goldenrod;
+    -fx-background-radius: 30;
+}
+.button:pressed {
+    -fx-background-color: darkgoldenrod;
+    -fx-background-radius: 30;
+}
