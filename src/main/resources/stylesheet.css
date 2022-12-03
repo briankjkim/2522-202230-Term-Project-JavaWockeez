@@ -10,11 +10,14 @@
     -fx-text-fill: black;
     -fx-background-color: #f7b248;
     -fx-background-radius: 30;
-    /*-fx-padding: 7px;*/
+    -fx-padding: 7px;
+    -fx-translate-x: 85;
+
 }
 .button:hover {
     -fx-background-color: goldenrod;
     -fx-background-radius: 30;
+    -fx-rotate: 3deg;
 }
 .button:pressed {
     -fx-background-color: darkgoldenrod;
