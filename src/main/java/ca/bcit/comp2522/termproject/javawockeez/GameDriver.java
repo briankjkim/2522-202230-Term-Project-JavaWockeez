@@ -16,18 +16,24 @@ import javafx.stage.Stage;
 import java.nio.file.Paths;
 
 /**
- * Main Game Driver
+ * Main Game Driver.
  * @author Brian KJ Kim, Wallace Trinh
  * @version Dec 2022
  */
 public class GameDriver extends Application {
+    /**
+     * Width of the game window set to 510.
+     */
     public static final int appWidth = 510;
+    /**
+     * Height of the game window set to 700.
+     */
     public static final int appHeight = 700;
     private Player player;
     private ImageView viewBackground;
     private ImageView viewPersonTwo;
     /**
-     * Audio Player for when the Game loads in.
+     * Audio Player for when the Main menu loads in.
      */
     public void inMenuMusic() {
         String path = "src/main/resources/Audio/MainMenu.wav";
@@ -50,13 +56,16 @@ public class GameDriver extends Application {
     }
     /**
      * Launches the JavaFX application.
-     *
      * @param args command line arguments
      */
     public static void main(String[] args) {
         launch(args);
     }
-
+    /**
+     * Initial start of the application.
+     * @param stage represents the JavaFX container.
+     * @throws Exception is unchecked.
+     */
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Escape Subject 2522");
@@ -65,13 +74,16 @@ public class GameDriver extends Application {
         stage.setScene(mainMenu(stage));
         stage.show();
     }
-
+    /**
+     * The first scene represented as the main menu.
+     * @param stage represented as the main menu container.
+     * @return main menu scene.
+     */
     public Scene mainMenu(Stage stage){// Creating a button in the first scene to be placed at the center
         inMenuMusic();
         Button startButton = new Button();
         startButton.setPrefWidth(150);
         startButton.setPrefHeight(15);
-
         startButton.setText("Start");
 
         HBox hbox1 = new HBox(startButton);
@@ -95,12 +107,12 @@ public class GameDriver extends Application {
         return new Scene(mainMenuPane);
     }
     /**
-     * Displays an image that can be moved using the arrow keys.
-     *
-     * @param stage a Stage
+     * The main game represented as scene 2.
+     * @param stage as the main game container.
+     * @return the main game.
+     * @throws Exception is unchecked.
      */
     public Scene inGame(final Stage stage) throws Exception {
-
         inGameMusic();
         Image person_two = new Image("ExplosionSpriteFPS7.gif", true);
         Image background = new Image("BoardTemplate.png", true);
@@ -119,7 +131,6 @@ public class GameDriver extends Application {
 
         Boom boom2 = new Boom(100, 200) {
         };
-
         Boom boom3 = new Boom(400, 500) {
         };
 
@@ -134,5 +145,4 @@ public class GameDriver extends Application {
         stage.show();
         return new Scene(scene.getRoot());
     }
-
 }
