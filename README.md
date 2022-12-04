@@ -41,11 +41,11 @@ Technologies used for this project:
 
 ---
 ## References
-- Banner: made with canva.com
-- In-Game Images made with https://www.pixilart.com/ by Wallace Trinh
-- In-Game Gif made with https://www.piskelapp.com/ by Wallace Trinh
 - Photos:
-    - n/a
+  - Banner: made with canva.com
+  - In-Game Images made with https://www.pixilart.com/ by Wallace Trinh
+  - In-Game Gif made with https://www.piskelapp.com/ by Wallace Trinh
+
 
 - Sound Content
   - Main Menu Music https://freesound.org/people/josefpres/sounds/653793/
@@ -55,9 +55,6 @@ Technologies used for this project:
   - Level-Up - https://freesound.org/people/danlucaz/sounds/517765/
   - Victory - https://freesound.org/people/Timbre/sounds/105981/
   - GameOver - https://freesound.org/people/TheZero/sounds/368367/
-
-- Tutorials followed in the making of this project:
-    - 
 
 ---
 ## Contributors
